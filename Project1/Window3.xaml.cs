@@ -34,7 +34,7 @@ namespace Project1
             string nazwisko = NazwiskoTextBox.Text;
             string pesel = PeselTextBox.Text;
             string haslo = HasloPasswordBox.Password;
-
+            //gdssgsddsg
             if (!string.IsNullOrWhiteSpace(imie) && !string.IsNullOrWhiteSpace(nazwisko) && !string.IsNullOrWhiteSpace(pesel) && !string.IsNullOrWhiteSpace(haslo))
             {
                 try
