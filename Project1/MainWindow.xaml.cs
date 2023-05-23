@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 
 namespace Project1
 {
@@ -22,14 +23,17 @@ namespace Project1
     /// </summary>
     public partial class MainWindow : Window
     {
+
         private DataTable table;
+        private string connectionString;
         public MainWindow()
         {
 
             InitializeComponent();
+            connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
             string queryString = "SELECT Nazwisko  FROM  Klient";
-
-            string connectionString = "Data Source=(local);Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+           
+            //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -100,24 +104,24 @@ namespace Project1
         }
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            SqlConnection connetionString = new SqlConnection("Data Source=(local);Initial Catalog=Wypozyczalnia2;Integrated Security=True");
-            connetionString.Open();
-            SqlCommand pokaz = new SqlCommand("Select Nazwisko From Klient", connetionString);
+            SqlConnection connectionString = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30");
+            connectionString.Open();
+            SqlCommand pokaz = new SqlCommand("Select Nazwisko From Klient", connectionString);
 
             // ComboBox wypozyczalnie = new ComboBox();
             string sql = "SELECT * FROM Klient";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, connetionString);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, connectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
 
             //dg.ItemsSource = table.DefaultView;
-            connetionString.Close();
+            connectionString.Close();
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selected = Login.SelectedItem.ToString();
             string queryString = "Select Klient.Nazwisko From Klient";
-            string connectionString = "Data Source=(local);Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+         //   string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -162,6 +166,7 @@ namespace Project1
         {
             Window3 window3 = new Window3();
             window3.Show();
+
         }
     }
 }

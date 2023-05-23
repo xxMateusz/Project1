@@ -7,31 +7,29 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid Background="Aquamarine">
-        <!--<Image Source="C:\Users\ateor\Downloads"/>-->
         <DataGrid x:Name="dataGrid1" SelectionChanged="dataGrid1_SelectionChanged" >
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF62ABEF" Offset="1"/>
+                    <GradientStop Color="#FF628BEF" Offset="1"/>
                 </LinearGradientBrush>
             </DataGrid.Background>
 
         </DataGrid>
-        <Button Content="Pokaż oferte" HorizontalAlignment="Left" Height="95" Margin="15,175,0,0" VerticalAlignment="Top" Width="222" Click="Button_Click" Foreground="Black" Background="Aqua"/>
-        <ComboBox x:Name="Wybierz_miasto" HorizontalAlignment="Left" Height="128" Margin="15,47,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="ComboBox_SelectionChanged" Text="Miasto" Foreground="Black" Background="Aqua" BorderBrush="Cyan">
+        <Button Content="Pokaż oferte" HorizontalAlignment="Left" Height="95" Margin="15,175,0,0" VerticalAlignment="Top" Width="222" Click="Button_Click"/>
+        <ComboBox x:Name="Wybierz_miasto" HorizontalAlignment="Left" Height="128" Margin="15,47,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="ComboBox_SelectionChanged" Text="Miasto">
             <DataGrid />
             <ComboBoxItem>
                 <!--<ComboBoxItem.DataContext>
                     <local:Wypozyczalnia/>
                 </ComboBoxItem.DataContext>-->
-              
             </ComboBoxItem>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Height="29" Margin="15,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Foreground="Black" Background="Aqua"><Run Language="pl-pl" Text="Wybierz miasto"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="15,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Foreground="White" Background="#FF76A8EC"><Run Language="pl-pl" Text="Wybierz miasto"/></TextBlock>
 
-        <DataGrid Name ="adresyGrid"  HorizontalAlignment="Left" Height="109" Margin="158,47,0,0" VerticalAlignment="Top" Width="203"  AutoGenerateColumns="True" ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged_1"   Foreground="Black" Background="Aqua" />
+        <DataGrid Name ="adresyGrid"  HorizontalAlignment="Left" Height="109" Margin="158,47,0,0" VerticalAlignment="Top" Width="203"  AutoGenerateColumns="True" ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged_1"/>
         <Calendar Name ="kalendarz"  SelectionMode="MultipleRange"  HorizontalAlignment="Left" Height="160" Margin="524,47,0,0" VerticalAlignment="Top" Width="201"/>
-        <DataGrid Name ="oferta"  HorizontalAlignment="Left" Height="7" Margin="15,270,0,0" VerticalAlignment="Top" Width="1" AutoGenerateColumns="True" ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged_2" RenderTransformOrigin="0.5,0.5">
+        <DataGrid Name ="oferta"  HorizontalAlignment="Left" Height="7" Margin="15,270,0,0" VerticalAlignment="Top" Width="42" AutoGenerateColumns="True" ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged_2" RenderTransformOrigin="0.5,0.5">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1" ScaleY="-1"/>
@@ -41,9 +39,9 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Button Content="Zamknij aplikacje" HorizontalAlignment="Left" Height="42" Margin="25,353,0,0" VerticalAlignment="Top" Width="202" Click="Button_Click_1" Foreground="Black" Background="Aqua"/>
-        <Button Content="Sprawdz ceny modeli" HorizontalAlignment="Left" Height="49" Margin="484,345,0,0" VerticalAlignment="Top" Width="173" Click="Button_Click_2" Foreground="Black" Background="Aqua"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="4" Margin="757,203,0,0" VerticalAlignment="Top" Width="1" Click="Button_Click_3" Foreground="Black" Background="Aqua"/>
-        <TextBlock HorizontalAlignment="Left" Height="29" Margin="158,18,0,0" TextWrapping="Wrap" Text="Wypożyczalnie" VerticalAlignment="Top" Width="203" Foreground="Black" Background="Aqua"/>
+        <Button Content="Zamknij aplikacje" HorizontalAlignment="Left" Height="42" Margin="25,353,0,0" VerticalAlignment="Top" Width="202" Click="Button_Click_1"/>
+        <Button Content="Oblicz cene wynajmu" HorizontalAlignment="Left" Height="49" Margin="484,345,0,0" VerticalAlignment="Top" Width="173" Click="Button_Click_2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="32" Margin="730,175,0,0" VerticalAlignment="Top" Width="28" Click="Button_Click_3"/>
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="158,18,0,0" TextWrapping="Wrap" Text="Wypożyczalnie" VerticalAlignment="Top" Width="203" Background="#FF4489B5" Foreground="White"/>
     </Grid>
 </Window>

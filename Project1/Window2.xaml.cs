@@ -84,7 +84,7 @@ namespace Project1
             InitializeComponent();
             string queryString = "SELECT MarkaSamochodu  FROM  Samochod";
 
-            string connectionString = "Data Source=(local);Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -149,7 +149,7 @@ namespace Project1
         {
 
             string queryString = "Select MarkaSamochodu, ModelSamochodu, CenaZaDzien From Samochod";
-            string connectionString = "Data Source=(local);Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -195,7 +195,7 @@ namespace Project1
 
             string selected = SamochodyInfo.SelectedItem.ToString();
             string queryString = "Select ModelSamochodu, CenaZaDzien From Samochod Where MarkaSamochodu = @MarkaSamochodu";
-            string connectionString = "Data Source=(local);Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -232,7 +232,7 @@ namespace Project1
             {
                 string selected = ((DataRowView)Modele1.SelectedItems[0]).Row["ModelSamochodu"].ToString();
                 string queryString = "SELECT MarkaSamochodu, ModelSamochodu, CenaZaDzien FROM Samochod WHERE ModelSamochodu = @ModelSamochodu";
-                string connectionString = "Data Source=DESKTOP-CVD8VKU;Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+                string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -314,7 +314,7 @@ namespace Project1
             int liczba;
             if (int.TryParse(iloscDni.Text, out liczba))
             {
-                string connectionString = "Data Source=DESKTOP-CVD8VKU;Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+                string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
                 string queryString = "SELECT CenaZaDzien FROM Samochod WHERE ModelSamochodu = @ModelSamochodu";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -374,7 +374,7 @@ namespace Project1
         {
             string selected = Modele1.SelectedItem.ToString();
             string queryString = "SELECT CenaZaDzien FROM Samochod ";
-            string connectionString = "Data Source=DESKTOP-CVD8VKU;Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -412,7 +412,7 @@ namespace Project1
 
             string selected = SamochodyInfo1.SelectedItem.ToString();
             string queryString = "Select ModelSamochodu From Samochod Where MarkaSamochodu = @MarkaSamochodu";
-            string connectionString = "Data Source=DESKTOP-CVD8VKU;Initial Catalog=Wypozyczalnia2;Integrated Security=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ateor\\source\\repos\\Project1\\Project1\\Data\\Wypozyczalnia2.mdf;Integrated Security=True;Connect Timeout=30";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
